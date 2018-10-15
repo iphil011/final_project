@@ -8,7 +8,7 @@ public class explode : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         radius = 1;
-        strength = 1;
+        strength = 5;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +19,7 @@ public class explode : MonoBehaviour {
             foreach (Collider2D hit in colliders) {
                 Vector2 vel = hit.transform.position - transform.position;
                 vel.Normalize();
+                vel = vel * strength;
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
                 if (rb != null) {
                     rb.AddForce(vel, ForceMode2D.Impulse);
