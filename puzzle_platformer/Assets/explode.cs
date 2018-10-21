@@ -8,7 +8,7 @@ public class explode : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         radius = 1;
-        strength = 5;
+        strength = 7;
 	}
 	
 	// Update is called once per frame
