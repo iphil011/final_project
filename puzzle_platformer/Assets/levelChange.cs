@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class levelChange : MonoBehaviour {
-    public 
+    public int level;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +16,6 @@ public class levelChange : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(level);
     }
 }
