@@ -7,6 +7,7 @@ public class movement : MonoBehaviour {
     public GameObject pulse;
     public int limit;
     private int shots;
+    public float sSpeed;
 	// Use this for initialization
 	void Start () {
         limit = 3;
@@ -27,6 +28,9 @@ public class movement : MonoBehaviour {
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Instantiate(pulse, new Vector3(mousePos.x, mousePos.y, 0), transform.rotation);
+            Instantiate(pulse, transform.position, transform.rotation);
+            pulse.GetComponent<explode>().target = mousePos;
+
             shots++;
         }
         if (Input.GetButtonDown("Fire2")) {
