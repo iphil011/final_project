@@ -1,0 +1,6 @@
+- limit player speed in air
+- stop shots refreshing in air
+- make receptors work
+- make shots shoot to location vs instant spawn
+- work on level 4
+- 
