@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour {
     public float speed;
+    public float maxSpeed;
     public GameObject pulse;
     public int limit;
     private int shots;
@@ -15,9 +16,11 @@ public class movement : MonoBehaviour {
     void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal") * speed;
-        //Vector2 xMove = new Vector2(x, 0);
         transform.Translate(x, 0, 0);
-        
+
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > maxSpeed) {
+            GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.normalized * maxSpeed;
+        }
         
     }
     // Update is called once per frame

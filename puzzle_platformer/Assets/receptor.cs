@@ -12,13 +12,21 @@ public class receptor : MonoBehaviour {
 	void Start () {
 		
 	}
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject == trigger) {
-            target.GetComponent<activate>().on = true;
-            Debug.Log("in");
+        //Debug.Log("in");
+        if (target != null && collision.gameObject == trigger)
+        {
+            target.GetComponent<launch>().on = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        target.GetComponent<launch>().on = false;
+    }
+
     // Update is called once per frame
     void Update () {
 		
