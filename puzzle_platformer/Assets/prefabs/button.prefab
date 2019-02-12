@@ -232,7 +232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 1038669674184402}
-  door: {fileID: 0}
+  target: {fileID: 0}
+  type: 0
+  dual: {fileID: 0}
+  on: 0
 --- !u!212 &212981705646813084
 SpriteRenderer:
   m_ObjectHideFlags: 1

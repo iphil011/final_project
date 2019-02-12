@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+  maxSpeed: 0
   pulse: {fileID: 1027296819572406, guid: 68f1f3b327e59644f80448486ad51e82, type: 2}
   limit: 0
 --- !u!212 &212795245613323840

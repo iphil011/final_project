@@ -16,7 +16,7 @@ public class receptor : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("in");
-        if (target != null && collision.gameObject == trigger)
+        if (target != null)
         {
             target.GetComponent<launch>().on = true;
         }

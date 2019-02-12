@@ -1,3 +1,4 @@
 - stop shots refreshing in air
 - make shots shoot to location vs instant spawn
 - work on level 4
+- add no ball zones
