@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1149238920}
   - component: {fileID: 1149238922}
   - component: {fileID: 1149238921}
+  - component: {fileID: 1149238923}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -695,6 +696,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1149238923
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149238919}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &1686282580
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +773,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2485,6 +2499,11 @@ Prefab:
     - target: {fileID: 4314792390330426, guid: 99e9c252423209548b4648fefda8262d, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114020974604475648, guid: 99e9c252423209548b4648fefda8262d,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e9c252423209548b4648fefda8262d, type: 2}
