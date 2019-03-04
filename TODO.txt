@@ -2,3 +2,10 @@
 - make shots shoot to location vs instant spawn
 - work on level 4
 - add no ball zones
+- refreshing zones 
+- use more of basic mechanics earlier
+- move recepetors on level 3 closer to target
+- define blast range with graphics
+- raycast aiming line
+- move apart level 2 dual switch
+- expand gap in level 2

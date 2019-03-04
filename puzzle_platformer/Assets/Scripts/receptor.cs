@@ -15,16 +15,24 @@ public class receptor : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //Debug.Log("in");
-        if (target != null)
-        {
+        if (type == 1) {
+            target.GetComponent<Collider2D>().enabled = false;
+            target.GetComponent<Renderer>().enabled = false;
+        }
+        else if (target != null) {
             target.GetComponent<launch>().on = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        target.GetComponent<launch>().on = false;
+        if (type == 1) {
+            target.GetComponent<Collider2D>().enabled = true;
+            target.GetComponent<Renderer>().enabled = true;
+        }
+        else {
+            target.GetComponent<launch>().on = false;
+        }
     }
 
     // Update is called once per frame

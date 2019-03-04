@@ -7,11 +7,13 @@ public class movement : MonoBehaviour {
     public float maxSpeed;
     public GameObject pulse;
     public int limit;
+    public float sSpeed;
     private int shots;
 	// Use this for initialization
 	void Start () {
         limit = 3;
         shots = 0;
+        sSpeed = 0.5f;
 	}
     void FixedUpdate()
     {
@@ -28,8 +30,10 @@ public class movement : MonoBehaviour {
         
         if (Input.GetButtonDown("Fire1")&&shots<limit)
         {
+            
+            Instantiate(pulse, transform.position, transform.rotation);
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(pulse, new Vector3(mousePos.x, mousePos.y, 0), transform.rotation);
+            pulse.GetComponent<explode>().target = new Vector2(mousePos.x, mousePos.y);
             shots++;
         }
         if (Input.GetButtonDown("Fire2")) {
