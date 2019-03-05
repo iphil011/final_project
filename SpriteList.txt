@@ -1,0 +1,8 @@
+wall left
+wall right
+wall corner
+ceiling
+floor
+box
+button (on)
+button (off)

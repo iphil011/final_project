@@ -4,8 +4,8 @@
 - add no ball zones
 - refreshing zones 
 - use more of basic mechanics earlier
-- move recepetors on level 3 closer to target
+- move recepetors on level 3 closer to target =
 - define blast range with graphics
 - raycast aiming line
-- move apart level 2 dual switch
-- expand gap in level 2
+- move apart level 2 dual switch = 
+- expand gap in level 2 =	
