@@ -1,8 +1,17 @@
-wall left
-wall right
-wall corner
-ceiling
-floor
+wall left-
+wall right-
+wall corner-
+ceiling -
+floor -
 box
 button (on)
 button (off)
+door
+exit
+background 1-4
+receptor (off)
+receptor (on)
+launchpad (off)
+launchpad (on)
+pulse -
+pulse explosion

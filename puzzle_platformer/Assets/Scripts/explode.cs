@@ -19,9 +19,12 @@ public class explode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (Vector2.Distance(transform.position, target) > 0.2) {
             transform.position += vel;
+            
         }
+        */
 
         if (Input.GetButtonDown("Fire2")) {
             Vector2 explosionPos = transform.position;

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: insideCorner2
+  m_Name: insideWall 3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: ae044dd7c644114429c3ed3586da4852, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ec5f895560b2b748ac71aea3e877478, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

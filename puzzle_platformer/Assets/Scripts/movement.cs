@@ -30,11 +30,14 @@ public class movement : MonoBehaviour {
         
         if (Input.GetButtonDown("Fire1")&&shots<limit)
         {
-            
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Instantiate(pulse, mousePos, transform.rotation);
+            /*
             Instantiate(pulse, transform.position, transform.rotation);
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pulse.GetComponent<explode>().target = new Vector2(mousePos.x, mousePos.y);
             shots++;
+            */
         }
         if (Input.GetButtonDown("Fire2")) {
             shots = 0;
