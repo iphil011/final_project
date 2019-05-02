@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61591692925411310}
   - component: {fileID: 50220885243949168}
   - component: {fileID: 114020974604475648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +181,10 @@ MonoBehaviour:
   maxSpeed: 0
   pulse: {fileID: 1027296819572406, guid: 68f1f3b327e59644f80448486ad51e82, type: 2}
   limit: 0
+  sSpeed: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &212795245613323840
 SpriteRenderer:
   m_ObjectHideFlags: 1
