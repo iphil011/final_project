@@ -16,7 +16,7 @@ public class receptor : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (type == 1) {
             target.GetComponent<Collider2D>().enabled = false;

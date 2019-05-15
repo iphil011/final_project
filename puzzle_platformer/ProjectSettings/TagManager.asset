@@ -6,6 +6,7 @@ TagManager:
   tags:
   - nullZone
   - energyZone
+  - music
   layers:
   - Default
   - TransparentFX

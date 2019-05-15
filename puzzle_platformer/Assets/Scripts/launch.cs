@@ -15,21 +15,23 @@ public class launch : MonoBehaviour {
 	}
     private void OnTriggerStay2D(Collider2D collision)
     {
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        
         if (on && collision.gameObject == player) {
             collision.GetComponent<Rigidbody2D>().AddForce(Vector2.up * strength, ForceMode2D.Impulse );
         }
-        if (on)
-        {
-            anim.SetTrigger(onHash);
-        }
-        else {
-            anim.SetTrigger(offHash);
-        }
+        
         
     }
     // Update is called once per frame
     void Update () {
-        
-	}
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if (on)
+        {
+            anim.SetTrigger(onHash);
+        }
+        else
+        {
+            anim.SetTrigger(offHash);
+        }
+    }
 }
