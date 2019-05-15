@@ -27,6 +27,7 @@ public class receptor : MonoBehaviour {
             target.GetComponent<launch>().on = true;
             anim.SetTrigger(onHash);
         }
+        //activates linked object while trigger active
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -40,6 +41,7 @@ public class receptor : MonoBehaviour {
             target.GetComponent<launch>().on = false;
             anim.SetTrigger(offHash);
         }
+        //deactivates linked object when trigger is inactive
     }
 
     // Update is called once per frame

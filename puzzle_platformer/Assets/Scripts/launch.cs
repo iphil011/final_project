@@ -19,7 +19,7 @@ public class launch : MonoBehaviour {
         if (on && collision.gameObject == player) {
             collision.GetComponent<Rigidbody2D>().AddForce(Vector2.up * strength, ForceMode2D.Impulse );
         }
-        
+        //applies force to player while active
         
     }
     // Update is called once per frame
@@ -33,5 +33,6 @@ public class launch : MonoBehaviour {
         {
             anim.SetTrigger(offHash);
         }
+        //switches animation state
     }
 }

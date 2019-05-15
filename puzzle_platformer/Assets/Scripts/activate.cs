@@ -37,6 +37,7 @@ public class activate : MonoBehaviour {
                 target.GetComponent<Renderer>().enabled = true;
             }
         }
+        //activates a linked object while triggered
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

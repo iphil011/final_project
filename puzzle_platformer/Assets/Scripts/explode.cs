@@ -39,12 +39,14 @@ public class explode : MonoBehaviour {
                 }
             }
             Destroy(gameObject);
+            //on right click applies force to any rigidbody in the radius and destroys the pulse
         }
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Collider2D>().tag == "nullZone") {
             Destroy(gameObject);
+            //destroys pulse if spawned in a zone where it can't be
         }
     }
 }

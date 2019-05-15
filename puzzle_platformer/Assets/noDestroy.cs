@@ -10,6 +10,8 @@ public class noDestroy : MonoBehaviour {
         if (obs.Length > 1) {
             Destroy(this.gameObject);
         }
+        //ensures there's only one music object in the game
         DontDestroyOnLoad(this.gameObject);
+        //keeps the music playing between scenes
     }
 }

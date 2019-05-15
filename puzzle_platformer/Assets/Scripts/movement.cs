@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class movement : MonoBehaviour {
-    public float speed;
-    public float maxSpeed;
-    public GameObject pulse;
-    public int limit;
+    public float speed; //speed player moves
+    public float maxSpeed; // max velocity of player
+    public GameObject pulse; 
+    public int limit; // limit of pulses player can spawn
     public float sSpeed;
-    private int shots;
+    private int shots; // amount of shots out
     
     int layerMask = 1 << 8;
 
@@ -22,10 +22,11 @@ public class movement : MonoBehaviour {
     void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal") * speed;
-        transform.Translate(x, 0, 0);
+        transform.Translate(x, 0, 0); // moves player horizontally through transform
 
         if (GetComponent<Rigidbody2D>().velocity.magnitude > maxSpeed) {
-            GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.normalized * maxSpeed;
+            Vector2 vel = GetComponent<Rigidbody2D>().velocity.normalized * maxSpeed;
+            GetComponent<Rigidbody2D>().velocity = vel; // limits player velocity
         }
         
     }
@@ -36,8 +37,10 @@ public class movement : MonoBehaviour {
         float dist = dir.magnitude;
         dir.Normalize();
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir,dist,layerMask);
+        //raycasts from the player to the mouse location ignoring every collision inside the layermask
         Debug.DrawRay(transform.position, new Vector2(0, -1)*1);
         RaycastHit2D grounded = Physics2D.Raycast(transform.position, new Vector2(0, -1),0.6f, layerMask);
+        //ray cast from the palyer straight down to check if the palyer is on the ground
         
         if (Input.GetButtonDown("Fire1")&&shots<limit)
         {
@@ -45,11 +48,13 @@ public class movement : MonoBehaviour {
             {
                 Instantiate(pulse, hit.point, transform.rotation);
                 shots++;
+                //if ray to mouse hits a collider spawns a pulse at the hit location
             }
             else
             {
                 Instantiate(pulse, mousePos, transform.rotation);
                 shots++;
+                // if ray doesn't collide spawns a pulse at mouse location
             }
             
         }
@@ -57,6 +62,7 @@ public class movement : MonoBehaviour {
             if (grounded)
             {
                 shots = 0;
+                // if player is on the ground refreshes shots
             }
 
         }
@@ -67,6 +73,7 @@ public class movement : MonoBehaviour {
         if (collision.GetComponent<Collider2D>().tag == "energyZone")
         {
             limit = 100;
+            //sets limit of pulses to 100
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -74,6 +81,7 @@ public class movement : MonoBehaviour {
         if (collision.GetComponent<Collider2D>().tag == "energyZone")
         {
             limit = 3;
+            //sets limit back to 3
         }
     }
 }
