@@ -18,28 +18,38 @@ public class receptor : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (type == 1) {
-            target.GetComponent<Collider2D>().enabled = false;
-            target.GetComponent<Renderer>().enabled = false;
-            anim.SetTrigger(onHash);
-        }
-        else if (target != null) {
-            target.GetComponent<launch>().on = true;
-            anim.SetTrigger(onHash);
+        if (collision.gameObject.tag == "pulse")
+        {
+            if (type == 1)
+            {
+                target.GetComponent<Collider2D>().enabled = false;
+                target.GetComponent<Renderer>().enabled = false;
+                anim.SetTrigger(onHash);
+            }
+            else if (target != null)
+            {
+                target.GetComponent<launch>().on = true;
+                anim.SetTrigger(onHash);
+            }
         }
         //activates linked object while trigger active
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (type == 1) {
-            target.GetComponent<Collider2D>().enabled = true;
-            target.GetComponent<Renderer>().enabled = true;
-            anim.SetTrigger(offHash);
-        }
-        else {
-            target.GetComponent<launch>().on = false;
-            anim.SetTrigger(offHash);
+        if (collision.gameObject.tag == "pulse")
+        {
+            if (type == 1)
+            {
+                target.GetComponent<Collider2D>().enabled = true;
+                target.GetComponent<Renderer>().enabled = true;
+                anim.SetTrigger(offHash);
+            }
+            else
+            {
+                target.GetComponent<launch>().on = false;
+                anim.SetTrigger(offHash);
+            }
         }
         //deactivates linked object when trigger is inactive
     }

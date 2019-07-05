@@ -9,6 +9,7 @@ public class movement : MonoBehaviour {
     public int limit; // limit of pulses player can spawn
     public float sSpeed;
     private int shots; // amount of shots out
+    private bool reload;
     
     int layerMask = 1 << 8;
 
@@ -18,6 +19,7 @@ public class movement : MonoBehaviour {
         shots = 0;
         sSpeed = 0.5f;
         layerMask = ~layerMask;
+        reload = false;
 	}
     void FixedUpdate()
     {
@@ -40,6 +42,7 @@ public class movement : MonoBehaviour {
         //raycasts from the player to the mouse location ignoring every collision inside the layermask
         Debug.DrawRay(transform.position, new Vector2(0, -1)*1);
         RaycastHit2D grounded = Physics2D.Raycast(transform.position, new Vector2(0, -1),0.6f, layerMask);
+        
         //ray cast from the palyer straight down to check if the palyer is on the ground
         
         if (Input.GetButtonDown("Fire1")&&shots<limit)
@@ -64,7 +67,17 @@ public class movement : MonoBehaviour {
                 shots = 0;
                 // if player is on the ground refreshes shots
             }
+            else
+            {
+                reload = true;
+            }
 
+        }
+        if (reload) {
+            if (grounded) {
+                shots = 0;
+                reload = false;
+            }
         }
     }
 

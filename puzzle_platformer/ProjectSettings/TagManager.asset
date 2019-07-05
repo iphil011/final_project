@@ -7,6 +7,8 @@ TagManager:
   - nullZone
   - energyZone
   - music
+  - player
+  - pulse
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,7 @@ public class launch : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (on && collision.gameObject == player) {
+        if (on && collision.gameObject.tag == "player") {
             collision.GetComponent<Rigidbody2D>().AddForce(Vector2.up * strength, ForceMode2D.Impulse );
         }
         //applies force to player while active
